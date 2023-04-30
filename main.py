@@ -115,10 +115,10 @@ def bk_app(doc):
 
 
 # Use streamlit-bokeh-events to run the Bokeh server and embed the app in Streamlit
-with st.container():
+with st.beta_container():
     # Run the Bokeh server and get the URL
     url = streamlit_bokeh_events(
-        bokeh_app=bk_app, 
+        bk_app, 
         polling_interval=100,
         debounce_time=0)
     # Display the URL in an iframe
