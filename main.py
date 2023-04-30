@@ -103,12 +103,12 @@ link2.on_click(load_content2)
 
 # vanilla.servable()
 
-# Define the Bokeh server function that returns the Panel app
+# Define Bokeh server
 def bk_app(doc):
     # Get the Panel app
     panel_app = vanilla
     # Create a Bokeh layout with the Panel app
-    bokeh_layout = panel_app._modify_doc(doc)
+    bokeh_layout = panel_app.servable()
     # Add the Bokeh layout to the Bokeh document
     doc.add_root(bokeh_layout)
 
