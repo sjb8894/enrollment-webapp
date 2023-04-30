@@ -21,7 +21,7 @@ vanilla = pn.template.VanillaTemplate(title='Enrollment Permissions Dashboard', 
 page = pn.Column(sizing_mode='stretch_width')
 
 # getting perms db data
-perms_db = pd.read_excel('/Users/sambenoist/Documents/RIT/Spring 23/webapp/PermissionsDB.xlsx') # how do we grab this from web?
+perms_db = pd.read_excel('PermissionsDB.xlsx') # how do we grab this from web?
 
 # initial helper creation
 filters = {
