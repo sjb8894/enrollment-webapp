@@ -103,23 +103,22 @@ link2.on_click(load_content2)
 
 # vanilla.servable()
 
-
-# Define Bokeh server
+# Define the Bokeh server function that returns the Panel app
 def bk_app(doc):
     # Get the Panel app
     panel_app = vanilla
     # Create a Bokeh layout with the Panel app
-    bokeh_layout = panel_app.servable()
+    bokeh_layout = panel_app._modify_doc(doc)
     # Add the Bokeh layout to the Bokeh document
     doc.add_root(bokeh_layout)
-
 
 # Use streamlit-bokeh-events to run the Bokeh server and embed the app in Streamlit
 with st.container():
     # Run the Bokeh server and get the URL
     url = streamlit_bokeh_events(
         bk_app, 
-        polling_interval=100,
+        events="*",
+        max_events=1000,
         debounce_time=0)
     # Display the URL in an iframe
     st.components.v1.iframe(url, height=400)
