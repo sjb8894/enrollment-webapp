@@ -115,7 +115,7 @@ def bk_app(doc):
 
 
 # Use streamlit-bokeh-events to run the Bokeh server and embed the app in Streamlit
-with st.beta_container():
+with st.container():
     # Run the Bokeh server and get the URL
     url = streamlit_bokeh_events(
         bk_app, 
