@@ -118,7 +118,6 @@ with st.container():
     url = streamlit_bokeh_events(
         bk_app, 
         events="*",
-        max_events=1000,
         debounce_time=0)
     # Display the URL in an iframe
     st.components.v1.iframe(url, height=400)
