@@ -97,4 +97,4 @@ def load_content2(event):
 link1.on_click(load_content1)
 link2.on_click(load_content2)
 
-vanilla.show()
+vanilla.servable()
